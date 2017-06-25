@@ -22,4 +22,5 @@
 			<bean class="pers.cc.crm.intercept.UserIntercept"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
+	<mvc:annotation-driven></mvc:annotation-driven>
 </beans>
