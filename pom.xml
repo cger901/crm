@@ -110,6 +110,8 @@
 			<artifactId>ojdbc</artifactId>
 			<version>11.2.0.3.0</version>
 		</dependency>
+		<!-- 配置方法 mvn install:install-file -DgroupId-=oracle -DartifactId=ojdbc -Dversion=11.2.0.3.0 
+			-Dpackaging=jar -Dfile=ojdbc6.jar -->
 	</dependencies>
 	<build>
 		<finalName>crm</finalName>
