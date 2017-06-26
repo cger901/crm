@@ -16,16 +16,28 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		// 查询结果，默认值null
 		Employee user = null;
 		// 测试用例
-		for(Employee emp : TestDataSourcecSingleton.getEmployees()) {
-			if (emp.getEmployeeName().equals(username) && emp.getPassword().equals(password)) {
-				user = emp;
-				break;
+		if (username!=null && password!=null) {
+			for(Employee emp : TestDataSourcecSingleton.getEmployees()) {
+				if (emp.getEmployeeName().equals(username) && emp.getPassword().equals(password)) {
+					user = emp;
+					break;
+				}
 			}
 		}
 		// 测试打印
 		System.out.println("Test:query," + user);
 		// 返回结果
 		return user;
+	}
+
+	@Override
+	public List<Employee> getAllUser() {
+		// 查询结果，默认值null
+		List<Employee> result = null;
+		// 测试用例
+		result = TestDataSourcecSingleton.getEmployees();
+		// 返回结果
+		return result;
 	}
 
 	@Override
@@ -69,7 +81,7 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 		// 更新结果，默认值null
 		boolean result = false;
 		// 测试用例
-		if (result) {
+		if (user!=null && user.getEmployeeName()!=null) {
 			for(Employee emp : TestDataSourcecSingleton.getEmployees()) {
 				if (emp.getEmployeeName().equals(user.getEmployeeName())) {
 					emp = user;
@@ -78,16 +90,6 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 				}
 			}
 		}
-		// 返回结果
-		return result;
-	}
-
-	@Override
-	public List<Employee> getAllUser() {
-		// 查询结果，默认值null
-		List<Employee> result = null;
-		// 测试用例
-		result = TestDataSourcecSingleton.getEmployees();
 		// 返回结果
 		return result;
 	}
